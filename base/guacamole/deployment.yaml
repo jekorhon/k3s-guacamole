@@ -22,7 +22,7 @@ spec:
           - containerPort: 8080
           env:
           - name: GUACD_HOSTNAME
-            value: "127.0.0.1"
+            value: guacd
           - name: GUACD_PORT
             value: "4822"
           - name: POSTGRES_DATABASE

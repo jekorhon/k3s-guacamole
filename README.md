@@ -4,6 +4,8 @@ This repostiory describes how to install and manage guacamole on kubernetes envi
 
 ## How to deploy
 ```bash
+# Apply the kubectl program
+# Remember to point the ingress hostname to ingress ip.
 $ kubectl apply -k base
 ```
 
