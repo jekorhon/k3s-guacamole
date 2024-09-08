@@ -35,3 +35,5 @@ spec:
             value: database
           - name: POSTGRES_PORT
             value: "5432"
+          - name: REMOTE_IP_VALVE_ENABLED
+            value: "true"
