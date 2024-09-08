@@ -17,3 +17,23 @@ spec:
     ports:
     - protocol: TCP
       port: 4822
+  egress:
+  - to:
+    - ipBlock:
+        cidr: 192.168.178.46/32
+    ports:
+    - protocol: TCP
+      port: 5902
+    - protocol: TCP
+      port: 22
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: kube-system
+      podSelector:
+        matchLabels:
+          k8s-app: kube-dns
+    ports:
+    - protocol: UDP
+      port: 53
+
