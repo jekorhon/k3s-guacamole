@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: guacd-network-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: guacd
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: guacamole
+    ports:
+    - protocol: TCP
+      port: 4822
