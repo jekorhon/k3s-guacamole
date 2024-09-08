@@ -4,3 +4,4 @@ resources:
 - deployment.yaml
 - configmap-initdb.yaml
 - service.yaml
+- networkpolicy.yaml
