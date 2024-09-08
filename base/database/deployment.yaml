@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database
+  namespace: guacamole
+  labels:
+    app: database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database
+  template:
+    metadata:
+      labels:
+        app: database
+    spec:
+      containers:
+        - name: database
+          image: postgres:latest
+          env:
+          - name: POSTGRES_USER
+            value: guacamole
+          - name: POSTGRES_DB
+            value: guacamole
+          - name: POSTGRES_PASSWORD
+            value: guacamole
+          volumeMounts:
+          - name: initdb
+            mountPath: /docker-entrypoint-initdb.d
+            readOnly: true
+      volumes:
+      - name: initdb
+        configMap:
+          name: guacamole-initdb
+          items:
+          - key: initdb.sql
+            path: initdb.sql
