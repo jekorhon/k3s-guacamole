@@ -2,6 +2,8 @@
 
 This repostiory describes how to install and manage guacamole on kubernetes environment.
 
+This isn't production ready in any means!
+
 ## How to deploy
 ```bash
 # Apply the kubectl program
@@ -11,8 +13,8 @@ $ kubectl apply -k base
 
 ## Components
 - PostgreSQL database: https://hub.docker.com/_/postgres
-- Guacamole frontend: https://hub.docker.com/_/postgres
-- Guadc backend: https://hub.docker.com/_/postgres
+- Guacamole frontend: https://hub.docker.com/r/guacamole/guacamole
+- Guadc backend: https://hub.docker.com/r/guacamole/guacd
 
 ## Version history
 
